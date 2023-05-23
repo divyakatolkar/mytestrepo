@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="receipt" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b034f79c-3d56-40ff-b0b8-20a8965a9a8e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     receipt.`id` AS receipt_id,
+     receipt.`name` AS receipt_name,
+     receipt.`coursename` AS receipt_coursename,
+     receipt.`amountinwprd` AS receipt_amountinwprd,
+     receipt.`amount` AS receipt_amount,
+     receipt.`receiptno` AS receipt_receiptno,
+     receipt.`paydate` AS receipt_paydate,
+     receipt.`status` AS receipt_status
+FROM
+     `receipt` receipt]]>
+	</queryString>
+	<field name="receipt_id" class="java.lang.Integer"/>
+	<field name="receipt_name" class="java.lang.String"/>
+	<field name="receipt_coursename" class="java.lang.String"/>
+	<field name="receipt_amountinwprd" class="java.lang.String"/>
+	<field name="receipt_amount" class="java.lang.Integer"/>
+	<field name="receipt_receiptno" class="java.lang.Integer"/>
+	<field name="receipt_paydate" class="java.sql.Date"/>
+	<field name="receipt_status" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="400" splitType="Stretch">
+			<staticText>
+				<reportElement x="122" y="20" width="207" height="73" forecolor="#3333FF" uuid="d4c18090-234d-40d9-a7c7-333cae8d26d7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NLT INFOTECH PVT LTD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="188" y="0" width="100" height="20" uuid="ec28ddcd-d048-4ebd-a46f-2134dad62a13"/>
+				<text><![CDATA[SAI SHREE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="188" y="93" width="100" height="20" forecolor="#000000" backcolor="#CCCCCC" uuid="e61e018c-74c8-47ec-9eb1-35fff790e022"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Receipt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="10" width="195" height="83" forecolor="#FF0000" uuid="f17787a4-9b13-472a-b44c-c3da2fc50b5d"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pl. No. 795, H. No. 2472, Sudampuri, Mira Layout, Sakkardara, Nagpur-440009]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="124" width="555" height="1" uuid="ad0b2125-cca4-482f-99a7-6833dc531aec"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="11" y="136" width="163" height="20" uuid="a75d916d-eb64-42bd-90ed-81c37d8d386a"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Received with thanks from]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="174" y="136" width="366" height="20" uuid="5386897f-6391-4cf5-8256-a4ea974daaf7"/>
+				<textFieldExpression><![CDATA[$F{receipt_name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="174" y="155" width="366" height="1" uuid="be642b35-515d-49ef-9cc1-5f8172636398"/>
+			</line>
+			<line>
+				<reportElement x="174" y="183" width="366" height="1" uuid="54037409-520f-495d-80c1-daf4fdead9c3"/>
+			</line>
+			<staticText>
+				<reportElement x="11" y="195" width="187" height="20" uuid="ace91bef-80e3-4577-95a1-c32d9c7ec10d"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[The Sum of Rupees(Rs. In Words)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="187" y="215" width="353" height="1" uuid="3de03aaf-520e-4852-b2d4-ac64e6490343"/>
+			</line>
+			<line>
+				<reportElement x="188" y="245" width="352" height="1" uuid="a38d8ce7-2aa3-45ab-9299-25e25293a53a"/>
+			</line>
+			<staticText>
+				<reportElement x="11" y="260" width="33" height="20" uuid="84ac20cb-8326-418a-abe4-7e4c4e202a55"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="44" y="260" width="496" height="20" uuid="8966821f-b76e-430c-acae-78eb532a73a7"/>
+				<textFieldExpression><![CDATA[$F{receipt_paydate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="44" y="280" width="496" height="1" uuid="616d2451-987b-4c87-95f8-f8c7761cd280"/>
+			</line>
+			<staticText>
+				<reportElement x="11" y="305" width="111" height="20" uuid="338cc4cc-41b8-4029-b75a-4c5af3170cdb"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment made for:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="122" y="305" width="418" height="20" uuid="e4ad806e-4073-4766-ba60-85792330e3a5"/>
+				<textFieldExpression><![CDATA[$F{receipt_coursename}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="122" y="325" width="418" height="1" uuid="64b9dd36-6d3d-49f0-ab13-68cf7d125307"/>
+			</line>
+			<rectangle radius="10">
+				<reportElement x="22" y="343" width="100" height="20" uuid="ead1aa41-2558-40fe-b28b-2efafa37b082"/>
+			</rectangle>
+			<textField>
+				<reportElement x="22" y="343" width="100" height="20" uuid="fb948356-9e37-48ea-ae73-729cc424b607"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Rs."+$F{receipt_amount}+"/-"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="363" width="187" height="16" uuid="80b76917-af31-45d3-95af-bd33b9b3f79d"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[(Subject to realization of cheque/D.D.)  ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="379" width="100" height="20" uuid="395af6b4-c2db-4a99-b7b7-e9716b53442d"/>
+				<textElement textAlignment="Center">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Not refundable]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="379" width="100" height="20" uuid="0c44d424-1449-4d47-ad2c-9307668da49c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[www.nltinfotech.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="393" y="380" width="162" height="20" uuid="251700e4-e206-43fc-a55f-7bc8b303ca3f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[For.NLT INFOTECH Pvt Ltd]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="188" y="184" width="366" height="20" uuid="589b7c11-b6a7-4616-905a-f426d114e153"/>
+				<textFieldExpression><![CDATA[$F{receipt_amountinwprd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="440" y="104" width="114" height="20" uuid="cbccafea-e374-4be6-8bcf-a24e62848dc9"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Receipt No. 182]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
